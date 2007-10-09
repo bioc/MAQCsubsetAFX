@@ -1,0 +1,19 @@
+\name{refD}
+\docType{data}
+\alias{refD}
+\title{ MAQC reference data }
+\description{ A subset of the MAQC's 'D' RNA reference dataset }
+\details{
+The Microarray Quality Control Consortium (MAQC) has generated a reference 
+dataset of Human Genome U133 Plus 2.0 GeneChips from 25\% of Stratagene 
+Universal Reference RNA and 75\% Ambion Brain reference RNA. Five different 
+test (\_1\_ to \_6\_) sites have processed this reference in 5 replicates 
+(D1 to D5). 
+
+The refD dataset includes one randomly chosen array per test site against
+which the user's hgu133plus2.0 array will be compared. See the package 
+vignette for more details.
+}
+\format{an object of type \code{"AffyBatch"}}
+\seealso{refA, refB, refC}
+\keyword{datasets}

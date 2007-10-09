@@ -1,0 +1,55 @@
+%\VignetteIndexEntry{MAQCsubsetAFX: MAQC data subset for the Affymetrix platform}
+%\VignetteKeywords{Affymetrix, MAQC}
+%\VignettePackage{MAQCsubsetAFX}
+\documentclass[12pt]{article}
+
+\usepackage{amsmath,pstricks}
+\usepackage{hyperref}
+\usepackage[authoryear,round]{natbib}
+
+\textwidth=6.2in
+\textheight=8.5in
+\parskip=.3cm
+\oddsidemargin=.1in
+\evensidemargin=.1in
+\headheight=-.3in
+
+\newcommand{\scscst}{\scriptscriptstyle}
+\newcommand{\scst}{\scriptstyle}
+\newcommand{\Rfunction}[1]{{\texttt{#1}}}
+\newcommand{\Robject}[1]{{\texttt{#1}}}
+\newcommand{\Rpackage}[1]{{\textit{#1}}}
+
+\author{Laurent Gatto}
+\begin{document}
+\title{MAQCsubsetAFX: MAQC reference subset for the Affymetrix platform}
+
+\maketitle
+\tableofcontents
+
+\section{The MAQC reference datasets}\label{sec:maqc} 
+
+The MAQC (MicroArray Quality Control) project\footnote{\url{http://www.fda.gov/nctr/science/centers/toxicoinformatics/maqc}} provides a set of reference datasets for a set of 10 platforms (see \textit{Summary of the MAQC Data Sets}\footnote{\url{http://edkb.fda.gov/MAQC/MainStudy/upload/Summary\_MAQC\_DataSets.pdf}} for more details). This package provides a subset of the Affymetrix MAQC dataset\footnote{Packages for the datasets of other platforms will follow and will all be named MAQCsubsetXXX where XXX is the three-letter code used by the MAQC consortium.}.
+
+ Regarding the Affymetrix platform (AFX prefix), a total of 120 Human Genome U133 Plus 2.0 GeneChips have been generated. Four different reference RNAs have been used: (A) 100\% of Stratagene's \textit{Universal Human Reference RNA}, (B) 100\% of Ambion's Human Brain Reference RNA, (C) 75\% of A and 25\% of B and (D) 25\% of A and 75\% of B. Each reference has been repeated 5 times (noted \_A1\_ to \_A5\_) on six different test sites (noted \_1\_ to \_6\_). As an example, the .CEL result file for the first replicate of test site 2, for the reference ARN C is named \texttt{AFX\_2\_C1.CEL}.
+
+These datasets are freely available and allow, for example, researchers to compare the reproducibility of their own Human Genome U133 Plus 2.0 arrays with a set of high quality .CEL files. Nevertheless, using all the 30 available .CEL files (per reference RNA) is memory consuming. As such, we randomly chose 6 .CEL file for each reference RNA, one for each test site as reference to compare the user's data to. These 6 .CEL files are distributed with the \Rpackage{MAQCsubsetAFX} package as 1 data object par reference RNA, respectively called \Robject{refA.RData}, \Robject{refB.RData}, \Robject{refC.RData} and \Robject{refD.RData}. These subsets are used by the \Rpackage{yaqcaffy} package to estimate the reproducibility of Human Genome U133 Plus 2.0 with the MAQC subset.
+
+More information concerning the MAQC initiative can be found in the September 2006 special issue of \textit{Nature Biotechnology}.
+
+
+\section{Loading the reference data}\label{sec:data} 
+
+Once the library has been installed and loaded, the reference datasets can be loaded using the \Rfunction(data()) function as shown below.
+
+<<>>==
+library("MAQCsubsetAFX")
+data(refA)
+refA
+@
+
+\end{document}
+
+
+
+
