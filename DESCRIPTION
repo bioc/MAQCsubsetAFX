@@ -1,10 +1,10 @@
 Package: MAQCsubsetAFX
 Title: MAQC data subset for the Affymetrix platform
-Version: 1.0.0
+Version: 1.0.1
 Author: Laurent Gatto
 Description: MAQC data subset for the Affymetrix platform
 Maintainer: Laurent Gatto  <l.gatto@dnavision.be>
-Depends: Biobase
+Depends: affy (>= 1.23.4), Biobase (>= 2.5.5)
 License:  The Artistic License, Version 2.0
 biocViews: Microarray, ExperimentData
 URL: http://www.slashhome.be/MAQCsubsetAFX.php
