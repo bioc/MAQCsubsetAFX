@@ -1,6 +1,6 @@
 Package: MAQCsubsetAFX
 Title: MAQC data subset for the Affymetrix platform
-Version: 1.0.7
+Version: 1.0.8
 Author: Laurent Gatto
 Description: MAQC data subset for the Affymetrix platform
 Maintainer: Laurent Gatto  <lg390@cam.ac.uk>
